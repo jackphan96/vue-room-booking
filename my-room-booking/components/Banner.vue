@@ -28,7 +28,7 @@
                                 <b-form-select-option value="D">Option D</b-form-select-option>
                             </b-form-select>
 
-                            <div class="mt-3">
+                            <div class="mt-3 banner-selection">
                                 Selected: <strong>{{ selected }}</strong>
                             </div>
                         </div>
@@ -38,7 +38,7 @@
                   <div class="col-md-3">
                     <div class = "book_tabel_item">
                         <div>
-                            <b-form-select v-model="selected" :options="options" class="mb-3">
+                            <b-form-select v-model="selected2" :options="options" class="mb-3">
                                 <!-- This slot appears above the options from 'options' prop -->
                                 <template v-slot:first>
                                 <b-form-select-option :value="null" disabled>-- Please select an size --</b-form-select-option>
@@ -49,8 +49,8 @@
                                 <b-form-select-option value="D">Option D</b-form-select-option>
                             </b-form-select>
 
-                            <div class="mt-3">
-                                Selected: <strong>{{ selected }}</strong>
+                            <div class="mt-3 banner-selection">
+                                Selected: <strong>{{ selected2 }}</strong>
                             </div>
                         </div>
                     </div>
@@ -59,7 +59,7 @@
                   <div class="col-md-3">
                     <div class = "book_tabel_item">
                         <div>
-                            <b-form-select v-model="selected" :options="options" class="mb-3">
+                            <b-form-select v-model="selected3" :options="options" class="mb-3">
                                 <!-- This slot appears above the options from 'options' prop -->
                                 <template v-slot:first>
                                 <b-form-select-option :value="null" disabled>-- Please select an date --</b-form-select-option>
@@ -70,8 +70,8 @@
                                 <b-form-select-option value="D">Option D</b-form-select-option>
                             </b-form-select>
 
-                            <div class="mt-3">
-                                Selected: <strong>{{ selected }}</strong>
+                            <div class="mt-3 banner-selection">
+                                Selected: <strong>{{ selected3 }}</strong>
                             </div>
                         </div>
                     </div>
@@ -97,6 +97,8 @@ export default {
     data() {
       return {
         selected: null,
+        selected2: null,
+        selected3: null,
         options: [
           { value: 'A', text: 'Option A (from options prop)' },
           { value: 'B', text: 'Option B (from options prop)' }
@@ -110,6 +112,11 @@ export default {
 /*---------------------------------------------------- */
 /*----------------------------------------------------*/
 /*============= Start banner_area css =============*/
+
+.banner-selection{
+  color: aqua;
+}
+
 .banner_area {
   background: #04091e;
   position: relative;

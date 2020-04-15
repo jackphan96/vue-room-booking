@@ -3,16 +3,11 @@
     <!--================Header Area =================-->
     <header class="header_area">
       <div>
-        <div class="">
+        <div class="container">
           <nav class="navbar navbar-expand-lg navbar-light">
             <!-- Brand and toggle get grouped for better mobile display -->
             <a class="navbar-brand logo_h" href="/">
-              <img
-                class="nav-logo"
-                src="~/assets/image/Logo.png"
-                alt=""
-                style=""
-              />
+              <img class="nav-logo" src="~/assets/image/Logo.png" alt style />
               <span>A1 Booking Service</span>
             </a>
             <button
@@ -29,16 +24,13 @@
               <span class="icon-bar"></span>
             </button>
             <!-- Collect the nav links, forms, and other content for toggling -->
-            <div
-              class="collapse navbar-collapse offset"
-              id="navbarSupportedContent"
-            >
+            <div class="collapse navbar-collapse offset" id="navbarSupportedContent">
               <ul class="nav navbar-nav menu_nav ml-auto">
                 <li class="nav-item active">
-                  <a class="nav-link" href="index.html">Home</a>
+                  <a class="nav-link" href="index">Home</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="about.html">About us</a>
+                  <a class="nav-link" href="room">Book Room</a>
                 </li>
               </ul>
             </div>
@@ -65,7 +57,7 @@ export default {};
 }
 
 .header_area {
-  position: absolute;
+  position: relative;
   top: 0;
   left: 0;
   width: 100%;

@@ -44,8 +44,8 @@
               </p>
             </div>
           </div>
-          <div class="card border-success">
-            <img src="~/assets/image/meeting-large.jpg" class="card-img-top" alt="" />
+          <div class="card border-success mb-3">
+            <!-- <img src="~/assets/image/meeting-large.jpg" class="card-img-top" alt="" /> -->
             <a href="#" class="btn theme_btn button_hover">Book Now</a>
             <div class="card-body">
               <h5 class="card-title">Card title</h5>
@@ -69,6 +69,7 @@
 </template>
 
 <style>
+
 .accomodation_item {
   margin-bottom: 30px;
 }
