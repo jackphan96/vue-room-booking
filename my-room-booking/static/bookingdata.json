@@ -1,0 +1,74 @@
+[
+  {
+    "id": "small",
+    "description": "Mauris enim leo, rhoncus sed, vestibulum sit amet, cursus id, turpis. Integer aliquet, massa id lobortis convallis, tortor risus dapibus augue, vel accumsan tellus nisi eu orci. Mauris lacinia sapien quis libero.",
+    "pax": "4",
+    "location": "Level 1 #01-14",
+    "img": "meeting-small.jpg",
+    "bookings": [
+      {
+        "title": "Mary",
+        "start": "2020-04-14T10:30:00",
+        "end": "2020-04-14T13:30:00"
+      },
+      {
+        "title": "Harry",
+        "start": "2020-04-16T16:30:00",
+        "end": "2020-04-16T18:30:00"
+      }
+    ]
+  },
+  {
+    "id": "medium",
+    "description": "Mauris enim leo, rhoncus sed, vestibulum sit amet, cursus id, turpis. Integer aliquet, massa id lobortis convallis, tortor risus dapibus augue, vel accumsan tellus nisi eu orci. Mauris lacinia sapien quis libero.",
+    "pax": "8",
+    "location": "Level 1 #01-03",
+    "img": "meeting-medium.jpg",
+    "bookings": [
+      {
+        "title": "Harry",
+        "start": "2020-04-15T10:30:00",
+        "end": "2020-04-15T13:30:00"
+      },
+      {
+        "title": "Harry",
+        "start": "2020-04-16T08:30:00",
+        "end": "2020-04-16T10:00:00"
+      },
+      {
+        "title": "Gary",
+        "start": "2020-04-16T14:00:00",
+        "end": "2020-04-16T17:00:00"
+      },
+      {
+        "title": "Harry",
+        "start": "2020-04-17T08:30:00",
+        "end": "2020-04-17T10:00:00"
+      }
+    ]
+  },
+  {
+    "id": "large",
+    "description": "Mauris enim leo, rhoncus sed, vestibulum sit amet, cursus id, turpis. Integer aliquet, massa id lobortis convallis, tortor risus dapibus augue, vel accumsan tellus nisi eu orci. Mauris lacinia sapien quis libero.",
+    "pax": "12",
+    "location": "Level 1 #02-02",
+    "img": "meeting-large.jpg",
+    "bookings": [
+      {
+        "title": "Mary",
+        "start": "2020-04-15T09:30:00",
+        "end": "2020-04-15T13:30:00"
+      },
+      {
+        "title": "Larry",
+        "start": "2020-04-16T08:30:00",
+        "end": "2020-04-16T10:00:00"
+      },
+      {
+        "title": "Harry",
+        "start": "2020-04-17T09:00:00",
+        "end": "2020-04-17T18:00:00"
+      }
+    ]
+  }
+]

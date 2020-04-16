@@ -34,14 +34,48 @@
               id="navbarSupportedContent"
             >
               <ul class="nav navbar-nav menu_nav ml-auto">
-                <li :class="[currentPage.includes('room') ? 'nav-item' : activeClass, 'nav-item']">
+                <li
+                  :class="[
+                    currentPage.includes('room') ? 'nav-item' : activeClass,
+                    'nav-item'
+                  ]"
+                >
                   <router-link to="/" class="nav-item">
                     <a class="nav-link" href="/">Home</a>
                   </router-link>
                 </li>
-                <li :class="[currentPage.includes('room') ? activeClass : '', 'nav-item']">
+                <li
+                  :class="[
+                    currentPage.includes('room') ? activeClass : '',
+                    'nav-item'
+                  ]"
+                >
                   <router-link to="/room" class="nav-item">
-                    <a class="nav-link" href="room">Book Room</a>
+                    <!-- <a class="nav-link" href="room">Book Room</a> -->
+                    <b-nav-item-dropdown
+                      text="Book Room"
+                      right
+                      class="nav-link"
+                    >
+                      <b-dropdown-item href="#">
+                        <router-link to="/room/small">
+                          Small Meeting Room
+                        </router-link>
+                      </b-dropdown-item>
+
+                      <b-dropdown-item href="#">
+                        <router-link to="/room/medium">
+                          Medium Meeting Room
+                        </router-link>
+                      </b-dropdown-item>
+
+                      <b-dropdown-item href="#">
+                        <router-link to="/room/large">
+                          Large Meeting Room
+                        </router-link>
+                      </b-dropdown-item>
+                      
+                    </b-nav-item-dropdown>
                   </router-link>
                 </li>
               </ul>
@@ -182,7 +216,7 @@ export default {
   position: relative;
 }
 
-.navbar .menu_nav .nav-item.submenu ul{
+.navbar .menu_nav .nav-item.submenu ul {
   border: none;
   padding: 0px;
   border-radius: 0px;

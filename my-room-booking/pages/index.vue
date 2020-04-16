@@ -196,7 +196,7 @@
               img-height="200px"
               img-width="350px"
             >
-              <router-link to="/room">
+              <router-link to="/room/small">
                 <a href="room" class="card-link"></a>
               </router-link>
               <b-card-text>
@@ -217,7 +217,7 @@
               img-height="200px"
               img-width="350px"
             >
-              <router-link to="/room">
+              <router-link to="/room/medium">
                 <a href="room" class="card-link"></a>
               </router-link>
               <b-card-text
@@ -237,7 +237,7 @@
               img-height="200px"
               img-width="350px"
             >
-              <router-link to="/room">
+              <router-link to="/room/large">
                 <a href="room" class="card-link"></a>
               </router-link>
               <b-card-text>

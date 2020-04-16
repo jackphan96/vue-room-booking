@@ -1,13 +1,15 @@
 <template>
+    <!-- :events="eventsData" -->
+
   <FullCalendar
     defaultView="timeGridWeek"
     :plugins="calendarPlugins"
     :weekends="false"
-    :events="eventsData"
+    :events="calendarData"
     :header="header"
     :height="670"
-    minTime = "08:00:00"
-    maxTime= "22:00:00"
+    minTime="08:00:00"
+    maxTime="22:00:00"
   />
 </template>
 
@@ -16,8 +18,11 @@ import FullCalendar from "@fullcalendar/vue";
 import dayGridPlugin from "@fullcalendar/daygrid";
 import timeGridPlugin from "@fullcalendar/timegrid";
 import interactionPlugin from "@fullcalendar/interaction";
+import jsondata from "~/static/bookingdata.json";
+import { mapState } from "vuex";
 
 export default {
+  props:['calendarData'],
   components: {
     FullCalendar // make the <FullCalendar> tag available
   },
@@ -29,13 +34,15 @@ export default {
         center: "title",
         right: "timeGridWeek,timeGridDay"
       },
-      eventsData: [
-        { title: 'event 1', start: '2020-04-15T10:30:00', end: '2020-04-15T13:30:00' },
-        { title: 'event 2', start: '2020-04-16T08:30:00', end: '2020-04-16T10:00:00' },
-        { title: 'event 3', start: '2020-04-16T14:00:00', end: '2020-04-16T17:00:00' },
-        { title: 'event 4', start: '2020-04-17T08:30:00', end: '2020-04-17T10:00:00' }
-      ]
+      id: this.$route.params.id,
+      data: jsondata,
     };
+  },
+  computed: {
+    ...mapState(["data"]),
+    product() {
+      return this.data.find(el => el.id === this.id);
+    }
   }
 };
 </script>
