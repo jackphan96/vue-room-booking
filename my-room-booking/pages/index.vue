@@ -9,7 +9,7 @@
           <div class="row">
             <div class="col-md-7 col-md-push-5">
               <div class="booking-cta">
-                <h1>Make your reservation</h1>
+                <h1>Make your booking</h1>
                 <p>
                   Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi
                   facere, soluta magnam consectetur molestias itaque ad sint
@@ -38,7 +38,7 @@
             <div class="col-md-10">
               <div class="boking_table">
                 <div class="row">
-                  <div class="col-md-3">
+                  <div class="col-md-4">
                     <div class="book_tabel_item">
                       <div>
                         <label for="roompicker" style="color:white;"
@@ -58,13 +58,16 @@
                           </template>
 
                           <!-- These options will appear after the ones from 'options' prop -->
+                          <b-form-select-option value="all"
+                            >All Room</b-form-select-option
+                          >
                           <b-form-select-option value="small"
                             >Small Meeting Room</b-form-select-option
                           >
                           <b-form-select-option value="medium"
                             >Medium Meeting Room</b-form-select-option
                           >
-                          <b-form-select-option value="big"
+                          <b-form-select-option value="large"
                             >Big Meeting Room</b-form-select-option
                           >
                         </b-form-select>
@@ -111,12 +114,6 @@
                       </div>
                     </div>
                   </div>
-
-                  <div class="col-md-2" style="padding: 20px;">
-                    <b-button size="lg" variant="warning" id="search-btn"
-                      >Search</b-button
-                    >
-                  </div>
                 </div>
               </div>
             </div>
@@ -134,122 +131,201 @@
           <h2 class="title_color">Room Booking</h2>
           <p>
             We all live in an age that belongs to the young at heart. Life that
-            is becoming extremely fast,
+            is becoming extremely fast, fast, fast.
           </p>
         </div>
-
-        <!-- card -->
-        <!-- <div class="card-deck">
-          <div class="card mb-3 border-variant='secondary'">
-            <img src="~/assets/image/meeting-small.jpg" class="card-img-top" width="350px" height="200px" alt />
-            <a href="#" class="btn theme_btn button_hover">Book Now</a>
-            <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <p class="card-text">
-                This is a longer card with supporting text below as a natural
-                lead-in to additional content. This content is a little bit
-                longer.
-              </p>
-              <p class="card-text">
-                <small class="text-muted">Last updated 3 mins ago</small>
-              </p>
-            </div>
-          </div>
-          <div class="card mb-3 border-variant='secondary'">
-            <img src="~/assets/image/meeting-medium.jpg" class="card-img-top" width="350px" height="200px" alt />
-            <a href="#" class="btn theme_btn button_hover">Book Now</a>
-            <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <p class="card-text">
-                This card has supporting text below as a natural lead-in to
-                additional content.
-              </p>
-              <p class="card-text">
-                <small class="text-muted">Last updated 3 mins ago</small>
-              </p>
-            </div>
-          </div>
-          <div class="card mb-3 border-variant='secondary'">
-            <img src="~/assets/image/meeting-large.jpg" class="card-img-top" width="350px" height="200px" alt="" />
-            <a href="#" class="btn theme_btn button_hover">Book Now</a>
-            <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <p class="card-text">
-                This is a wider card with supporting text below as a natural
-                lead-in to additional content. This card has even longer content
-                than the first to show that equal height action.
-              </p>
-              <p class="card-text">
-                <small class="text-muted">Last updated 3 mins ago</small>
-              </p>
-            </div>
-          </div>
-        </div>-->
-
         <div>
-          <b-card-group deck>
-            <b-card
-              title="Small Meeting Room"
-              img-src="~/assets/image/meeting-small.jpg"
-              img-alt="Image"
-              img-top
-              img-height="200px"
-              img-width="350px"
-            >
-              <router-link to="/room/small">
-                <a href="room" class="card-link"></a>
-              </router-link>
-              <b-card-text>
-                This is a wider card with supporting text below as a natural
-                lead-in to additional content. This content is a little bit
-                longer.
-              </b-card-text>
-              <template v-slot:footer>
-                <small class="text-muted">Last updated 3 mins ago</small>
-              </template>
-            </b-card>
-
-            <b-card
-              title="Medium Meeting Room"
-              img-src="~/assets/image/meeting-medium.jpg"
-              img-alt="Image"
-              img-top
-              img-height="200px"
-              img-width="350px"
-            >
-              <router-link to="/room/medium">
-                <a href="room" class="card-link"></a>
-              </router-link>
-              <b-card-text
-                >This card has supporting text below as a natural lead-in to
-                additional content.</b-card-text
+          <div v-if="selected == 'small' || selected == null || selected == 'all'">
+            <b-card-group deck class="room-cards">
+              <b-card
+                title="Small Meeting Room"
+                img-src="~/assets/image/meeting-small.jpg"
+                img-alt="Image"
+                img-top
+                img-height="200px"
+                img-width="350px"
               >
-              <template v-slot:footer>
-                <small class="text-muted">Last updated 3 mins ago</small>
-              </template>
-            </b-card>
+                <router-link to="/room/small">
+                  <a href="room" class="card-link"></a>
+                </router-link>
+                <b-card-text>
+                  This is a wider card with supporting text below as a natural
+                  lead-in to additional content. This content is a little bit
+                  longer.
+                </b-card-text>
+                <template v-slot:footer>
+                  <small class="text-muted">Last updated 3 mins ago</small>
+                </template>
+              </b-card>
+              <b-card
+                title="Small Meeting Room"
+                img-src="~/assets/image/meeting-small.jpg"
+                img-alt="Image"
+                img-top
+                img-height="200px"
+                img-width="350px"
+              >
+                <router-link to="/room/small">
+                  <a href="room" class="card-link"></a>
+                </router-link>
+                <b-card-text>
+                  This is a wider card with supporting text below as a natural
+                  lead-in to additional content. This content is a little bit
+                  longer.
+                </b-card-text>
+                <template v-slot:footer>
+                  <small class="text-muted">Last updated 3 mins ago</small>
+                </template>
+              </b-card>
+              <b-card
+                title="Small Meeting Room"
+                img-src="~/assets/image/meeting-small.jpg"
+                img-alt="Image"
+                img-top
+                img-height="200px"
+                img-width="350px"
+              >
+                <router-link to="/room/small">
+                  <a href="room" class="card-link"></a>
+                </router-link>
+                <b-card-text>
+                  This is a wider card with supporting text below as a natural
+                  lead-in to additional content. This content is a little bit
+                  longer.
+                </b-card-text>
+                <template v-slot:footer>
+                  <small class="text-muted">Last updated 3 mins ago</small>
+                </template>
+              </b-card>
+            </b-card-group>
+          </div>
 
-            <b-card
-              title="Large Meeting Room"
-              img-src="~/assets/image/meeting-large.jpg"
-              img-alt="Image"
-              img-top
-              img-height="200px"
-              img-width="350px"
-            >
-              <router-link to="/room/large">
-                <a href="room" class="card-link"></a>
-              </router-link>
-              <b-card-text>
-                This is a wider card with supporting text below as a natural
-                lead-in to additional content. This card has even longer content
-                than the first to show that equal height action.
-              </b-card-text>
-              <template v-slot:footer>
-                <small class="text-muted">Last updated 3 mins ago</small>
-              </template>
-            </b-card>
-          </b-card-group>
+          <div v-if="selected == 'medium' || selected == null || selected == 'all'">
+            <b-card-group deck class="room-cards">
+              <b-card
+                title="Medium Meeting Room"
+                img-src="~/assets/image/meeting-medium.jpg"
+                img-alt="Image"
+                img-top
+                img-height="200px"
+                img-width="350px"
+              >
+                <router-link to="/room/medium">
+                  <a href="room" class="card-link"></a>
+                </router-link>
+                <b-card-text
+                  >This card has supporting text below as a natural lead-in to
+                  additional content.</b-card-text
+                >
+                <template v-slot:footer>
+                  <small class="text-muted">Last updated 3 mins ago</small>
+                </template>
+              </b-card>
+              <b-card
+                title="Medium Meeting Room"
+                img-src="~/assets/image/meeting-medium.jpg"
+                img-alt="Image"
+                img-top
+                img-height="200px"
+                img-width="350px"
+              >
+                <router-link to="/room/medium">
+                  <a href="room" class="card-link"></a>
+                </router-link>
+                <b-card-text
+                  >This card has supporting text below as a natural lead-in to
+                  additional content.</b-card-text
+                >
+                <template v-slot:footer>
+                  <small class="text-muted">Last updated 3 mins ago</small>
+                </template>
+              </b-card>
+              <b-card
+                title="Medium Meeting Room"
+                img-src="~/assets/image/meeting-medium.jpg"
+                img-alt="Image"
+                img-top
+                img-height="200px"
+                img-width="350px"
+              >
+                <router-link to="/room/medium">
+                  <a href="room" class="card-link"></a>
+                </router-link>
+                <b-card-text
+                  >This card has supporting text below as a natural lead-in to
+                  additional content.</b-card-text
+                >
+                <template v-slot:footer>
+                  <small class="text-muted">Last updated 3 mins ago</small>
+                </template>
+              </b-card>
+            </b-card-group>
+          </div>
+
+          <div v-if="selected == 'large' || selected == null || selected == 'all'">
+            <b-card-group deck class="room-cards">
+              <b-card
+                title="Large Meeting Room"
+                img-src="~/assets/image/meeting-large.jpg"
+                img-alt="Image"
+                img-top
+                img-height="200px"
+                img-width="350px"
+              >
+                <router-link to="/room/large">
+                  <a href="room" class="card-link"></a>
+                </router-link>
+                <b-card-text>
+                  This is a wider card with supporting text below as a natural
+                  lead-in to additional content. This card has even longer
+                  content than the first to show that equal height action.
+                </b-card-text>
+                <template v-slot:footer>
+                  <small class="text-muted">Last updated 3 mins ago</small>
+                </template>
+              </b-card>
+              <b-card
+                title="Large Meeting Room"
+                img-src="~/assets/image/meeting-large.jpg"
+                img-alt="Image"
+                img-top
+                img-height="200px"
+                img-width="350px"
+              >
+                <router-link to="/room/large">
+                  <a href="room" class="card-link"></a>
+                </router-link>
+                <b-card-text>
+                  This is a wider card with supporting text below as a natural
+                  lead-in to additional content. This card has even longer
+                  content than the first to show that equal height action.
+                </b-card-text>
+                <template v-slot:footer>
+                  <small class="text-muted">Last updated 3 mins ago</small>
+                </template>
+              </b-card>
+              <b-card
+                title="Large Meeting Room"
+                img-src="~/assets/image/meeting-large.jpg"
+                img-alt="Image"
+                img-top
+                img-height="200px"
+                img-width="350px"
+              >
+                <router-link to="/room/large">
+                  <a href="room" class="card-link"></a>
+                </router-link>
+                <b-card-text>
+                  This is a wider card with supporting text below as a natural
+                  lead-in to additional content. This card has even longer
+                  content than the first to show that equal height action.
+                </b-card-text>
+                <template v-slot:footer>
+                  <small class="text-muted">Last updated 3 mins ago</small>
+                </template>
+              </b-card>
+            </b-card-group>
+          </div>
         </div>
       </div>
     </section>
@@ -262,28 +338,21 @@
 
 <script>
 import Navbar from "../components/Navbar.vue";
-import Hero from "../components/Hero.vue";
-import Banner from "../components/Banner.vue";
-import Body from "../components/Body.vue";
-import Tab from "../components/Tab.vue";
 import Map from "../components/Map.vue";
 
 export default {
   components: {
     Navbar,
-    Hero,
-    Banner,
-    Body,
-    Tab,
     Map
   },
-
+  methods: {},
   data() {
     return {
       message: "test",
       selected: null,
       selected2: null,
-      selected3: null
+      selected3: null,
+      value: ""
     };
   },
 
@@ -312,6 +381,10 @@ export default {
 };
 </script>
 <style>
+.room-cards {
+  padding: 14px;
+}
+
 .card-link {
   position: absolute;
   top: 0;
