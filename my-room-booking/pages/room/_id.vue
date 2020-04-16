@@ -55,11 +55,10 @@
         </b-card>
       </div>
     </section>
-
     <!-- Calendar -->
     <b-container>
       <h1>Calendar</h1>
-      <Calendar :calendarData="bookingsDataFunc" :bookingdata="bookingdata" />
+      <Calendar :calendarData="bookingData" :instantiate="bookingsDataFunc" />
     </b-container>
     <!-- Calendar -->
 
@@ -98,22 +97,11 @@
               ><h5>Choose a start time:</h5></label
             >
             <b-time v-model="value" locale="en" @context="onContext"></b-time>
-            <!-- <b-form-timepicker
-              v-bind="startTime"
-              aria-required="true"
-              id="datepicker-start"
-              class="mb-2"
-            ></b-form-timepicker> -->
           </div>
 
           <br />
 
           <label for="timepicker-valid"><h5>Choose a end time:</h5> </label>
-          <!-- <b-form-timepicker
-            v-bind="endTime"
-            aria-required="true"
-            id="datepicker-end"
-          ></b-form-timepicker> -->
           <b-time v-model="value2" locale="en" @context="onContext2"></b-time>
         </div>
 
@@ -123,7 +111,10 @@
           size="lg"
           variant="warning"
           id="search-btn"
-          @click="myClickEvent"
+          @click="
+            myClickEvent();
+            makeToast('success');
+          "
           ref="myBtn"
           >Book<b-icon icon="calendar"></b-icon
         ></b-button>
@@ -146,7 +137,12 @@ import Calendar from "~/components/Calendar.vue";
 import jsondata from "~/static/bookingdata.json";
 import { mapState } from "vuex";
 
+// $(window).load(function() {
+//   bookingsDataFunc();
+// });
+
 export default {
+
   components: {
     Navbar,
     Map,
@@ -155,18 +151,21 @@ export default {
 
   methods: {
     myClickEvent: function(e) {
-      // console.log(this.startTime);
-      // console.log(this.endTime);
-      // console.log(this.bookingsData);
-      // var name = $("#input-name").val();
-      // var name = document.getElementById("#input-name").value;
-      var newJSON = {"title": this.name, "start":this.startTime, "end":this.endTime}
-      // append
-      var newBookingData = this.bookingdata;
-      newBookingData.push(newJSON);      
-      this.bookingdata = newBookingData;
+      var newJSON = {
+        "title": this.name,
+        "start": this.startTime,
+        "end": this.endTime
+      };
+      this.bookingData.push(newJSON);
       console.log(this.bookingdata);
-      
+    },
+
+    makeToast(variant = null) {
+        this.$bvToast.toast('Room Booked!', {
+          title: `Success Message`,
+          variant: variant,
+          solid: true
+        })
     },
 
     onContext(ctx) {
@@ -256,7 +255,7 @@ export default {
       var data = this.bookingdata.find(el => el.id === this.id);
       this.bookingData = data.bookings;
       var finalbookingdata = data.bookings;
-      console.log(this.bookingData);
+      // console.log(this.bookingData);
       return finalbookingdata;
     }
   },
@@ -279,7 +278,6 @@ export default {
     };
   }
 };
-
 </script>
 
 <style>

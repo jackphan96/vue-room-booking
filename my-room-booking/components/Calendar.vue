@@ -22,7 +22,7 @@ import jsondata from "~/static/bookingdata.json";
 import { mapState } from "vuex";
 
 export default {
-  props:['calendarData'],
+  props:['calendarData', 'instantiate'],
   components: {
     FullCalendar // make the <FullCalendar> tag available
   },
