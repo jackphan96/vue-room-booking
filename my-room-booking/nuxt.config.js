@@ -28,6 +28,7 @@ export default {
    ** Plugins to load before mounting the App
    */
   plugins: [
+    {src: '~/plugins/full-calendar', ssr: false}
   ],
   /*
    ** Nuxt.js dev-modules
@@ -40,7 +41,11 @@ export default {
     // Doc: https://bootstrap-vue.js.org
     "bootstrap-vue/nuxt",
     // Doc: https://axios.nuxtjs.org/usage
-    "@nuxtjs/axios"
+    "@nuxtjs/axios",
+    ['nuxt-gmaps', {
+      key: 'AIzaSyBTHAlSuxLsCHVuTxJKwSbNRpOdMso6eUU',
+      //you can use libraries: ['places']
+    }]
   ],
   /*
    ** Axios module configuration

@@ -1,15 +1,20 @@
 <template>
   <div>
     <!--================Header Area =================-->
-    <header class="header_area">
+    <header class="header_area nav-border">
       <div>
         <div class="container">
-          <nav class="navbar navbar-expand-lg navbar-light">
+          <nav
+            class="navbar navbar-expand-lg navbar-light"
+            style="padding: 20px; border=1px;"
+          >
             <!-- Brand and toggle get grouped for better mobile display -->
-            <a class="navbar-brand logo_h" href="/">
-              <img class="nav-logo" src="~/assets/image/Logo.png" alt style />
-              <span>A1 Booking Service</span>
-            </a>
+            <router-link to="/">
+              <a class="navbar-brand logo_h" href="/">
+                <img class="nav-logo" src="~/assets/image/Logo.png" alt style />
+                <span>A1 Booking Service</span>
+              </a>
+            </router-link>
             <button
               class="navbar-toggler"
               type="button"
@@ -24,13 +29,20 @@
               <span class="icon-bar"></span>
             </button>
             <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse offset" id="navbarSupportedContent">
+            <div
+              class="collapse navbar-collapse offset"
+              id="navbarSupportedContent"
+            >
               <ul class="nav navbar-nav menu_nav ml-auto">
-                <li class="nav-item active">
-                  <a class="nav-link" href="index">Home</a>
+                <li :class="[currentPage.includes('room') ? 'nav-item' : activeClass, 'nav-item']">
+                  <router-link to="/" class="nav-item">
+                    <a class="nav-link" href="/">Home</a>
+                  </router-link>
                 </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="room">Book Room</a>
+                <li :class="[currentPage.includes('room') ? activeClass : '', 'nav-item']">
+                  <router-link to="/room" class="nav-item">
+                    <a class="nav-link" href="room">Book Room</a>
+                  </router-link>
                 </li>
               </ul>
             </div>
@@ -43,14 +55,28 @@
 </template>
 
 <script>
-export default {};
+export default {
+  computed: {
+    currentPage() {
+      return this.$route.path;
+    }
+  },
+
+  data() {
+    return {
+      activeClass: "active"
+    };
+  }
+};
 </script>
 
 <style>
 /*---------------------------------------------------- */
 /*----------------------------------------------------*/
 /*============== header css =============*/
-
+.nav-border {
+  border-color: #222222;
+}
 .nav-logo {
   width: 55px;
   height: 55px;
@@ -62,6 +88,7 @@ export default {};
   left: 0;
   width: 100%;
   z-index: 20;
+  border: 1px;
 }
 
 .header-top {
@@ -121,7 +148,7 @@ export default {};
 }
 
 .navbar {
-  padding: 0px;
+  padding: 20px;
   border: 0px;
   border-radius: 0px;
 }
@@ -136,7 +163,7 @@ export default {};
 }
 
 .navbar .menu_nav .nav-item .nav-link {
-  font: 500 12px/80px "Poppins", sans-serif;
+  /* font: 500 12px/80px "Poppins", sans-serif; */
   color: #222222;
   text-transform: uppercase;
   padding: 0px;
@@ -155,7 +182,7 @@ export default {};
   position: relative;
 }
 
-.navbar .menu_nav .nav-item.submenu ul {
+.navbar .menu_nav .nav-item.submenu ul{
   border: none;
   padding: 0px;
   border-radius: 0px;

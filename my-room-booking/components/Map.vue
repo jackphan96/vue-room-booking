@@ -3,26 +3,23 @@
     <h1>Floor Plan</h1>
     <div id="googleMap" style="width:100%;height:500px;"></div>
     <script>
-  function myMap() {
-    var mapProp = {
-      center: new google.maps.LatLng(1.279478, 103.853624),
-      zoom: 21
-    };
-    var map = new google.maps.Map(
-      document.getElementById("googleMap"),
-      mapProp
-    );
+      function myMap() {
+        var mapProp = {
+          center: new google.maps.LatLng(1.279478, 103.853624),
+          zoom: 21
+        };
+        var map = new google.maps.Map(
+          document.getElementById("googleMap"),
+          mapProp
+        );
 
-    var marker = new google.maps.Marker({
-      position: new google.maps.LatLng(1.279478, 103.853624),
-      title: "Hello World!"
-    });
-    marker.setMap(map);
-  }
+        var marker = new google.maps.Marker({
+          position: new google.maps.LatLng(1.279478, 103.853624),
+          title: "Hello World!"
+        });
+        marker.setMap(map);
+      }
     </script>
-
-
-
   </div>
 </template>
 

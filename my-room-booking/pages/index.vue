@@ -31,7 +31,7 @@
           <div class="hotel_booking_table">
             <div class="col-md-3">
               <h2>
-                Book
+                Search
                 <br />Your Room
               </h2>
             </div>
@@ -41,7 +41,9 @@
                   <div class="col-md-3">
                     <div class="book_tabel_item">
                       <div>
-                        <label for="roompicker" style="color:white;">Select a room</label>
+                        <label for="roompicker" style="color:white;"
+                          >Select a room</label
+                        >
                         <b-form-select
                           v-model="selected"
                           :options="options"
@@ -50,13 +52,21 @@
                         >
                           <!-- This slot appears above the options from 'options' prop -->
                           <template v-slot:first>
-                            <b-form-select-option :value="null" disabled>-- Please select an room --</b-form-select-option>
+                            <b-form-select-option :value="null" disabled
+                              >-- Select a room --</b-form-select-option
+                            >
                           </template>
 
                           <!-- These options will appear after the ones from 'options' prop -->
-                          <b-form-select-option value="small">Small Meeting Room</b-form-select-option>
-                          <b-form-select-option value="medium">Medium Meeting Room</b-form-select-option>
-                          <b-form-select-option value="big">Big Meeting Room</b-form-select-option>
+                          <b-form-select-option value="small"
+                            >Small Meeting Room</b-form-select-option
+                          >
+                          <b-form-select-option value="medium"
+                            >Medium Meeting Room</b-form-select-option
+                          >
+                          <b-form-select-option value="big"
+                            >Big Meeting Room</b-form-select-option
+                          >
                         </b-form-select>
                       </div>
                     </div>
@@ -65,10 +75,17 @@
                   <div class="col-md-3">
                     <div class="book_tabel_item">
                       <div>
-                        <label for="datepicker-dateformat1" style="color:white;">Start Date</label>
+                        <label for="datepicker-dateformat1" style="color:white;"
+                          >Start Date</label
+                        >
                         <b-form-datepicker
                           id="datepicker-dateformat1"
-                          :date-format-options="{ year: 'numeric', month: 'short', day: '2-digit', weekday: 'short' }"
+                          :date-format-options="{
+                            year: 'numeric',
+                            month: 'short',
+                            day: '2-digit',
+                            weekday: 'short'
+                          }"
                           locale="en"
                         ></b-form-datepicker>
                       </div>
@@ -78,10 +95,17 @@
                   <div class="col-md-3">
                     <div class="book_tabel_item">
                       <div>
-                        <label for="datepicker-dateformat2" style="color:white;">End Date</label>
+                        <label for="datepicker-dateformat2" style="color:white;"
+                          >End Date</label
+                        >
                         <b-form-datepicker
                           id="datepicker-dateformat2"
-                          :date-format-options="{ year: 'numeric', month: 'short', day: '2-digit', weekday: 'short' }"
+                          :date-format-options="{
+                            year: 'numeric',
+                            month: 'short',
+                            day: '2-digit',
+                            weekday: 'short'
+                          }"
                           locale="en"
                         ></b-form-datepicker>
                       </div>
@@ -89,7 +113,9 @@
                   </div>
 
                   <div class="col-md-2" style="padding: 20px;">
-                    <b-button size="lg" variant="warning" id="search-btn">Search</b-button>
+                    <b-button size="lg" variant="warning" id="search-btn"
+                      >Search</b-button
+                    >
                   </div>
                 </div>
               </div>
@@ -170,10 +196,13 @@
               img-height="200px"
               img-width="350px"
             >
-              <a href="room" class="card-link"></a>
+              <router-link to="/room">
+                <a href="room" class="card-link"></a>
+              </router-link>
               <b-card-text>
-                This is a wider card with supporting text below as a natural lead-in to additional content.
-                This content is a little bit longer.
+                This is a wider card with supporting text below as a natural
+                lead-in to additional content. This content is a little bit
+                longer.
               </b-card-text>
               <template v-slot:footer>
                 <small class="text-muted">Last updated 3 mins ago</small>
@@ -188,8 +217,13 @@
               img-height="200px"
               img-width="350px"
             >
-              <a href="room" class="card-link"></a>
-              <b-card-text>This card has supporting text below as a natural lead-in to additional content.</b-card-text>
+              <router-link to="/room">
+                <a href="room" class="card-link"></a>
+              </router-link>
+              <b-card-text
+                >This card has supporting text below as a natural lead-in to
+                additional content.</b-card-text
+              >
               <template v-slot:footer>
                 <small class="text-muted">Last updated 3 mins ago</small>
               </template>
@@ -203,10 +237,13 @@
               img-height="200px"
               img-width="350px"
             >
-              <a href="room" class="card-link"></a>
+              <router-link to="/room">
+                <a href="room" class="card-link"></a>
+              </router-link>
               <b-card-text>
-                This is a wider card with supporting text below as a natural lead-in to additional content.
-                This card has even longer content than the first to show that equal height action.
+                This is a wider card with supporting text below as a natural
+                lead-in to additional content. This card has even longer content
+                than the first to show that equal height action.
               </b-card-text>
               <template v-slot:footer>
                 <small class="text-muted">Last updated 3 mins ago</small>
