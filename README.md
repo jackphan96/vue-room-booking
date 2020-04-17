@@ -19,16 +19,14 @@ List of assumptions:
 
 Stack chosen:
 -
-## Frontend
-###### Nuxt
+###### NuxtJS (Vue framework)
 ```
-It provides a grreat structure at the start to build structure
-It allows the creation of components for ease of code reuse such as navbar
-Allow reloading of webpage faster and updating of value without refreshing (Hot reloading)
+It provides a great structure to build the project at the start. It allows the creation of components for ease of code reuse such as navbar and allows reloading of webpage faster and updating of value without refreshing (Hot reloading)
 ```
-## Backend
+##### Heroku
 -
 ```
+
 No backend framework or programming language involved. Used JSON file to simulate data processing
 ```
 
