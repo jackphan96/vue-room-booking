@@ -16,9 +16,11 @@
             class="dark-overlay"
           >
             <b-card-text style="padding-top: 200px">
-              <h1>Room Booking</h1>
-              Some quick example text to build on the card and make up the bulk
-              of the card's content.
+              <div>
+                <h1>Room Booking test</h1>
+                Some quick example text to build on the card and make up the
+                bulk of the card's content.
+              </div>
             </b-card-text>
           </b-card>
         </div>
@@ -142,7 +144,6 @@ import { mapState } from "vuex";
 // });
 
 export default {
-
   components: {
     Navbar,
     Map,
@@ -152,20 +153,20 @@ export default {
   methods: {
     myClickEvent: function(e) {
       var newJSON = {
-        "title": this.name,
-        "start": this.startTime,
-        "end": this.endTime
+        title: this.name,
+        start: this.startTime,
+        end: this.endTime
       };
       this.bookingData.push(newJSON);
       console.log(this.bookingdata);
     },
 
     makeToast(variant = null) {
-        this.$bvToast.toast('Room Booked!', {
-          title: `Success Message`,
-          variant: variant,
-          solid: true
-        })
+      this.$bvToast.toast("Room Booked!", {
+        title: `Success Message`,
+        variant: variant,
+        solid: true
+      });
     },
 
     onContext(ctx) {
