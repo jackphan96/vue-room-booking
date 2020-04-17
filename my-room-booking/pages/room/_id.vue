@@ -15,12 +15,10 @@
             align="center"
             class="dark-overlay"
           >
-            <b-card-text style="padding-top: 200px">
-              <div>
-                <h1>Room Booking test</h1>
-                Some quick example text to build on the card and make up the
-                bulk of the card's content.
-              </div>
+            <b-card-text style="padding-top: 10%">
+              <h1>Room Booking</h1>
+              Some quick example text to build on the card and make up the bulk
+              of the card's content.
             </b-card-text>
           </b-card>
         </div>
@@ -242,6 +240,13 @@ export default {
         href: "https://fonts.googleapis.com/css?family=Roboto"
       }
     ]
+    // ,
+    // script: [
+    //   {
+    //     src:
+    //       "https://maps.googleapis.com/maps/api/js?key=AIzaSyBTHAlSuxLsCHVuTxJKwSbNRpOdMso6eUU&callback=myMap"
+    //   }
+    // ]
   },
 
   computed: {
